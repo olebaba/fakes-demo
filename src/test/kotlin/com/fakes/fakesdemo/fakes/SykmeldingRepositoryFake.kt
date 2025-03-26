@@ -9,7 +9,7 @@ class SykmeldingRepositoryFake : SykmeldingRepository {
 
     override fun getAllByPerson(person: String): List<Sykmelding> = sykmeldinger.values.filter { it.person == person }
 
-    override fun getAllByGyldig(gyldig: Boolean): List<Sykmelding> = sykmeldinger.values.filter { it.gyldig == gyldig }
+    override fun getAllByStatus(status: String): List<Sykmelding> = sykmeldinger.values.filter { it.status == status }
 
     override fun <S : Sykmelding?> save(entity: S & Any): S & Any {
         sykmeldinger[entity.id!!] = entity

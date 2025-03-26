@@ -8,9 +8,9 @@ import java.time.LocalDate
 data class Sykmelding(
     @Id
     val id: String? = null,
+    val status: String = "NY",
     val periode: Periode,
     val person: String,
-    val gyldig: Boolean,
 )
 
 data class Periode(

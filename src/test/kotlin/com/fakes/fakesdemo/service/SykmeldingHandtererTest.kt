@@ -7,11 +7,12 @@ import com.fakes.fakesdemo.bruker.Sykmelding
 import com.fakes.fakesdemo.fakes.ArbeidsforholdClientFake
 import com.fakes.fakesdemo.fakes.SykmeldingRepositoryFake
 import org.amshove.kluent.`should be equal to`
+import org.amshove.kluent.`should not be null`
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import java.time.LocalDate
 
-class SammenstillDataTest : FellesTestOppsett() {
+class SykmeldingHandtererTest : FellesTestOppsett() {
     @Autowired
     lateinit var arbeidsforholdClient: ArbeidsforholdClientFake
 
@@ -19,7 +20,7 @@ class SammenstillDataTest : FellesTestOppsett() {
     lateinit var sykmeldingRepository: SykmeldingRepositoryFake
 
     @Autowired
-    lateinit var sammenstillData: SammenstillData
+    lateinit var sykmeldingHandterer: SykmeldingHandterer
 
     @Test
     fun `skal sende sykmelding`() {
@@ -38,20 +39,13 @@ class SammenstillDataTest : FellesTestOppsett() {
                 id = "1",
                 periode = Periode(fom = LocalDate.parse("2025-01-01"), tom = LocalDate.parse("2025-01-20")),
                 person = "person",
-                gyldig = true,
+                status = "NY",
             ),
         )
 
-        val sammenstilltData = sammenstillData.sammenstillDataForSykmelding("1")
-        sammenstilltData `should be equal to`
-            SammenstilltData(
-                person = "person",
-                arbeidsforhold =
-                    Arbeidsforhold(
-                        arbeidsgiver = "Jobben AS",
-                        stilling = "Arbeider",
-                        periode = Periode(fom = LocalDate.parse("2020-01-01")),
-                    ),
-            )
+        sykmeldingHandterer.sendSykmelding("1")
+        val sendtSykmelding = sykmeldingRepository.findById("1").get()
+        sendtSykmelding.`should not be null`()
+        sendtSykmelding.status `should be equal to` "SENDT"
     }
 }

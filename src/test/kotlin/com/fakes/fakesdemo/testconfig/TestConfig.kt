@@ -1,6 +1,7 @@
 package com.fakes.fakesdemo.testconfig
 
 import com.fakes.fakesdemo.fakes.ArbeidsforholdClientFake
+import com.fakes.fakesdemo.fakes.SykmeldingProducerFake
 import com.fakes.fakesdemo.fakes.SykmeldingRepositoryFake
 import org.springframework.boot.test.context.TestConfiguration
 import org.springframework.context.annotation.Bean
@@ -12,4 +13,7 @@ class TestConfig {
 
     @Bean
     fun sykmeldingRepository(): SykmeldingRepositoryFake = SykmeldingRepositoryFake()
+
+    @Bean
+    fun sykmeldingProducer(): SykmeldingProducerFake = SykmeldingProducerFake()
 }
