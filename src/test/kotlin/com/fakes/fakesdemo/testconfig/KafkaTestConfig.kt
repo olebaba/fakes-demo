@@ -1,17 +1,21 @@
 package com.fakes.fakesdemo.testconfig
 
+import org.apache.kafka.clients.CommonClientConfigs.BOOTSTRAP_SERVERS_CONFIG
 import org.apache.kafka.clients.consumer.Consumer
 import org.apache.kafka.clients.consumer.ConsumerConfig
 import org.apache.kafka.clients.consumer.ConsumerRecord
 import org.apache.kafka.clients.consumer.KafkaConsumer
 import org.apache.kafka.common.serialization.StringDeserializer
 import org.awaitility.Awaitility.await
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.test.context.TestConfiguration
 import org.springframework.context.annotation.Bean
 import java.time.Duration
 
 @TestConfiguration
-class KafkaTestConfig {
+class KafkaTestConfig(
+    @Value("\${KAFKA_BROKERS}") private val kafkaBrokers: String,
+) {
     @Bean
     fun kafkaConsumer() = KafkaConsumer<String, String>(consumerConfig("sykmelding-group-id"))
 
@@ -22,6 +26,7 @@ class KafkaTestConfig {
             ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG to StringDeserializer::class.java,
             ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG to StringDeserializer::class.java,
             ConsumerConfig.AUTO_OFFSET_RESET_CONFIG to "earliest",
+            BOOTSTRAP_SERVERS_CONFIG to kafkaBrokers,
         )
 }
 
