@@ -2,7 +2,11 @@ package com.fakes.fakesdemo
 
 import com.fakes.fakesdemo.testconfig.KafkaTestConfig
 import org.junit.jupiter.api.TestInstance
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
+import org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrint
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.test.web.servlet.MockMvc
 import org.testcontainers.containers.PostgreSQLContainer
 import org.testcontainers.kafka.KafkaContainer
 import org.testcontainers.utility.DockerImageName
@@ -15,7 +19,11 @@ private class PostgreSQLContainer14 : PostgreSQLContainer<PostgreSQLContainer14>
         Application::class, KafkaTestConfig::class,
     ],
 )
+@AutoConfigureMockMvc(print = MockMvcPrint.NONE, printOnlyOnFailure = false)
 class IntegrasjonTestOppsett {
+    @Autowired
+    lateinit var mockMvc: MockMvc
+
     companion object {
         init {
             KafkaContainer(DockerImageName.parse("apache/kafka-native:3.8.1")).apply {

@@ -1,0 +1,5 @@
+spring.application.name: fakes-demo
+
+management.endpoints.web:
+    base-path: /internal
+    exposure.include: health
