@@ -28,6 +28,7 @@ class SykmeldingHandtererTest : FellesTestOppsett() {
             person = "person",
             arbeidsforhold =
                 Arbeidsforhold(
+                    person = "person",
                     arbeidsgiver = "Jobben AS",
                     stilling = "Arbeider",
                     periode = Periode(fom = LocalDate.parse("2020-01-01")),

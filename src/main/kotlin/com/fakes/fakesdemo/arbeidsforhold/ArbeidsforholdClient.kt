@@ -13,6 +13,7 @@ class ArbeidsforholdClientEkstern : ArbeidsforholdClient {
     override fun hentArbeidsForholdForPerson(person: String): Arbeidsforhold {
         Thread.sleep(1000)
         return Arbeidsforhold(
+            person = person,
             arbeidsgiver = "Jobben AS",
             stilling = "Arbeider",
             periode =
@@ -27,4 +28,5 @@ data class Arbeidsforhold(
     val arbeidsgiver: String,
     val stilling: String,
     val periode: Periode,
+    val person: String,
 )
