@@ -1,4 +1,4 @@
-package com.fakes.fakesdemo.tjeneste
+package com.fakes.fakesdemo.arbeidsforhold
 
 import com.fakes.fakesdemo.bruker.Periode
 import org.springframework.stereotype.Component

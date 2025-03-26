@@ -1,11 +1,11 @@
 package com.fakes.fakesdemo.service
 
 import com.fakes.fakesdemo.FellesTestOppsett
+import com.fakes.fakesdemo.arbeidsforhold.Arbeidsforhold
 import com.fakes.fakesdemo.bruker.Periode
 import com.fakes.fakesdemo.bruker.Sykmelding
 import com.fakes.fakesdemo.fakes.ArbeidsforholdClientFake
 import com.fakes.fakesdemo.fakes.SykmeldingRepositoryFake
-import com.fakes.fakesdemo.tjeneste.Arbeidsforhold
 import org.amshove.kluent.`should be equal to`
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired

@@ -1,8 +1,8 @@
 package com.fakes.fakesdemo.service
 
+import com.fakes.fakesdemo.arbeidsforhold.Arbeidsforhold
+import com.fakes.fakesdemo.arbeidsforhold.ArbeidsforholdClient
 import com.fakes.fakesdemo.bruker.SykmeldingRepository
-import com.fakes.fakesdemo.tjeneste.Arbeidsforhold
-import com.fakes.fakesdemo.tjeneste.ArbeidsforholdClient
 import org.springframework.stereotype.Service
 
 @Service
