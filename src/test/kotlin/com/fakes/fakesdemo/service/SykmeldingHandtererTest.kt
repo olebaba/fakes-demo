@@ -25,7 +25,6 @@ class SykmeldingHandtererTest : FellesTestOppsett() {
     @Test
     fun `skal sende sykmelding`() {
         arbeidsforholdClient.leggTilArbeidsforhold(
-            person = "person",
             arbeidsforhold =
                 Arbeidsforhold(
                     person = "person",

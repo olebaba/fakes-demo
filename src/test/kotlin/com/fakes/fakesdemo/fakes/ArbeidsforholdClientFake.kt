@@ -8,11 +8,8 @@ class ArbeidsforholdClientFake : ArbeidsforholdClient {
 
     override fun hentArbeidsForholdForPerson(person: String): Arbeidsforhold? = arbeidsforhold[person]
 
-    fun leggTilArbeidsforhold(
-        person: String,
-        arbeidsforhold: Arbeidsforhold,
-    ) {
-        this.arbeidsforhold[person] = arbeidsforhold
+    fun leggTilArbeidsforhold(arbeidsforhold: Arbeidsforhold) {
+        this.arbeidsforhold[arbeidsforhold.person] = arbeidsforhold
     }
 
     fun reset() {
