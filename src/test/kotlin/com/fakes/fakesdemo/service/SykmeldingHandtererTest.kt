@@ -2,10 +2,9 @@ package com.fakes.fakesdemo.service
 
 import com.fakes.fakesdemo.FellesTestOppsett
 import com.fakes.fakesdemo.arbeidsforhold.Arbeidsforhold
-import com.fakes.fakesdemo.bruker.Periode
-import com.fakes.fakesdemo.bruker.Sykmelding
 import com.fakes.fakesdemo.fakes.ArbeidsforholdClientFake
 import com.fakes.fakesdemo.fakes.SykmeldingRepositoryFake
+import com.fakes.fakesdemo.sykmelding.Sykmelding
 import org.amshove.kluent.`should be equal to`
 import org.amshove.kluent.`should not be null`
 import org.junit.jupiter.api.Test
@@ -30,14 +29,15 @@ class SykmeldingHandtererTest : FellesTestOppsett() {
                     person = "person",
                     arbeidsgiver = "Jobben AS",
                     stilling = "Arbeider",
-                    periode = Periode(fom = LocalDate.parse("2020-01-01")),
+                    fom = LocalDate.parse("2020-01-01"),
                 ),
         )
 
         sykmeldingRepository.save(
             Sykmelding(
                 id = "1",
-                periode = Periode(fom = LocalDate.parse("2025-01-01"), tom = LocalDate.parse("2025-01-20")),
+                fom = LocalDate.parse("2025-01-01"),
+                tom = LocalDate.parse("2025-01-20"),
                 person = "person",
                 status = "NY",
             ),

@@ -1,4 +1,4 @@
-package com.fakes.fakesdemo.bruker
+package com.fakes.fakesdemo.sykmelding
 
 import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Table
@@ -9,11 +9,7 @@ data class Sykmelding(
     @Id
     val id: String? = null,
     val status: String = "NY",
-    val periode: Periode,
     val person: String,
-)
-
-data class Periode(
     val fom: LocalDate,
-    val tom: LocalDate? = null,
+    val tom: LocalDate,
 )

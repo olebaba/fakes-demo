@@ -1,6 +1,5 @@
 package com.fakes.fakesdemo.arbeidsforhold
 
-import com.fakes.fakesdemo.bruker.Periode
 import org.springframework.stereotype.Component
 import java.time.LocalDate
 
@@ -16,10 +15,7 @@ class ArbeidsforholdClientEkstern : ArbeidsforholdClient {
             person = person,
             arbeidsgiver = "Jobben AS",
             stilling = "Arbeider",
-            periode =
-                Periode(
-                    fom = LocalDate.parse("2020-01-01"),
-                ),
+            fom = LocalDate.parse("2020-01-01"),
         )
     }
 }
@@ -27,6 +23,7 @@ class ArbeidsforholdClientEkstern : ArbeidsforholdClient {
 data class Arbeidsforhold(
     val arbeidsgiver: String,
     val stilling: String,
-    val periode: Periode,
     val person: String,
+    val fom: LocalDate,
+    val tom: LocalDate? = null,
 )

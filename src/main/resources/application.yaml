@@ -1,4 +1,14 @@
-spring.application.name: fakes-demo
+spring:
+    application.name: fakes-demo
+    profiles:
+        active: default
+    flyway:
+        enabled: true
+    datasource:
+        url: "${DATABASE_JDBC_URL}&reWriteBatchedInserts=true"
+        hikari:
+            minimum-idle: 1
+            maximum-pool-size: 5
 
 management.endpoints.web:
     base-path: /internal

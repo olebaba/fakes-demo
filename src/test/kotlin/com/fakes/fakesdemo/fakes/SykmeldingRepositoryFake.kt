@@ -1,7 +1,7 @@
 package com.fakes.fakesdemo.fakes
 
-import com.fakes.fakesdemo.bruker.Sykmelding
-import com.fakes.fakesdemo.bruker.SykmeldingRepository
+import com.fakes.fakesdemo.sykmelding.Sykmelding
+import com.fakes.fakesdemo.sykmelding.SykmeldingRepository
 import java.util.*
 
 class SykmeldingRepositoryFake : SykmeldingRepository {

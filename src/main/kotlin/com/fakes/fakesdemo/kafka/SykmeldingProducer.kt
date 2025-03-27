@@ -1,6 +1,6 @@
 package com.fakes.fakesdemo.kafka
 
-import com.fakes.fakesdemo.bruker.Sykmelding
+import com.fakes.fakesdemo.sykmelding.Sykmelding
 import com.fakes.fakesdemo.utils.serialisertTilString
 import org.apache.kafka.clients.producer.Producer
 import org.apache.kafka.clients.producer.ProducerRecord

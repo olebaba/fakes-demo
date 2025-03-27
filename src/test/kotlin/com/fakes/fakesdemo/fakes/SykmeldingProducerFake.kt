@@ -1,7 +1,7 @@
 package com.fakes.fakesdemo.fakes
 
-import com.fakes.fakesdemo.bruker.Sykmelding
 import com.fakes.fakesdemo.kafka.SykmeldingProducer
+import com.fakes.fakesdemo.sykmelding.Sykmelding
 
 class SykmeldingProducerFake : SykmeldingProducer {
     private val sendteSykmeldinger = mutableMapOf<String, Sykmelding>()

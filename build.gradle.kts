@@ -26,6 +26,7 @@ dependencies {
     implementation("org.springframework.kafka:spring-kafka")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.postgresql:postgresql")
+    implementation("org.flywaydb:flyway-database-postgresql")
     implementation("org.hibernate.validator:hibernate-validator")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")

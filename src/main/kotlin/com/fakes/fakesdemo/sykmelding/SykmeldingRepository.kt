@@ -1,4 +1,4 @@
-package com.fakes.fakesdemo.bruker
+package com.fakes.fakesdemo.sykmelding
 
 import org.springframework.data.repository.CrudRepository
 
