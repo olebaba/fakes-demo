@@ -34,6 +34,7 @@ dependencies {
     testImplementation("org.amshove.kluent:kluent:1.73")
     testImplementation("org.testcontainers:postgresql")
     testImplementation("org.testcontainers:kafka")
+    testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }

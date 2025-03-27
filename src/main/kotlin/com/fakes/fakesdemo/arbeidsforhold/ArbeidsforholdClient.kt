@@ -10,7 +10,8 @@ interface ArbeidsforholdClient {
 @Component
 class ArbeidsforholdClientEkstern : ArbeidsforholdClient {
     override fun hentArbeidsForholdForPerson(person: String): Arbeidsforhold {
-        Thread.sleep(1000)
+        // Kall til eksternt api
+
         return Arbeidsforhold(
             person = person,
             arbeidsgiver = "Jobben AS",
