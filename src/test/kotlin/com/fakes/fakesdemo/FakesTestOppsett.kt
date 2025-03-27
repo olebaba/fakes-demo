@@ -16,6 +16,6 @@ import org.springframework.boot.test.context.SpringBootTest
         "KAFKA_BROKERS=$IGNORED_KAFKA_BROKERS",
     ],
 )
-class FellesTestOppsett
+class FakesTestOppsett
 
 const val IGNORED_KAFKA_BROKERS = "localhost:9092"

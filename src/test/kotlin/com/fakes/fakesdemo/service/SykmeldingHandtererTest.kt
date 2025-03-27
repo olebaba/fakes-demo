@@ -1,6 +1,6 @@
 package com.fakes.fakesdemo.service
 
-import com.fakes.fakesdemo.FellesTestOppsett
+import com.fakes.fakesdemo.FakesTestOppsett
 import com.fakes.fakesdemo.arbeidsforhold.Arbeidsforhold
 import com.fakes.fakesdemo.fakes.ArbeidsforholdClientFake
 import com.fakes.fakesdemo.fakes.SykmeldingRepositoryFake
@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import java.time.LocalDate
 
-class SykmeldingHandtererTest : FellesTestOppsett() {
+class SykmeldingHandtererTest : FakesTestOppsett() {
     @Autowired
     lateinit var arbeidsforholdClient: ArbeidsforholdClientFake
 
